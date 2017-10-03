@@ -18,15 +18,26 @@ public class MainActivity extends AppCompatActivity{
 
         timer = new CountDownTimer(3000, 1000){
             @Override
-            public void onTick(long l) {
-
-            }
-
+            public void onTick(long l) {}
             public  void onFinish(){
                 createGame();
             }
         }.start();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        timer = new CountDownTimer(3000, 1000){
+            @Override
+            public void onTick(long l) {}
+            public  void onFinish(){
+                createGame();
+            }
+        }.start();
+    }
+
+
 
     public void createGame() {
         Intent intent = new Intent(this, GameActivity.class);

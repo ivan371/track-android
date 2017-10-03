@@ -23,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
         button= (Button) findViewById(R.id.button);
         counter = 1;
         textView= (TextView) findViewById(R.id.textView2);
-        timer = new CountDownTimer(11000, 1000){
+        timer = new CountDownTimer(1001000, 1000){
             public void onTick(long millisUntilFinished){
                 textView.setText(String.valueOf(counter));
                 counter++;
