@@ -63,6 +63,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        timer.cancel();
+        super.onDestroy();
+    }
+
+    @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         counter = savedInstanceState.getInt("counter");
