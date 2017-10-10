@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity{
             counter = savedInstanceState.getInt("counter");
         }
 
-        timer = new CountDownTimer(TIMER_DURATION - 1000 * (counter - 1), TIMER_STEP) {
+        timer = new CountDownTimer(TIMER_DURATION - TIMER_STEP * (counter - 1), TIMER_STEP) {
             @Override
             public void onTick(long l) {
                 counter++;

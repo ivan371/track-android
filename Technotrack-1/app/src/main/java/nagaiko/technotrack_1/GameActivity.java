@@ -29,7 +29,6 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         button= (Button) findViewById(R.id.button);
         textView= (TextView) findViewById(R.id.textView2);
-        timer = new MyTimer(TIMER_DURATION, TIMER_STEP);
         if(savedInstanceState != null) {
             counter = savedInstanceState.getInt("counter");
             isStop = savedInstanceState.getBoolean("isStop");
@@ -38,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
             counter = 1;
             isStop = false;
         }
+        timer = new MyTimer(TIMER_DURATION - counter * TIMER_STEP, TIMER_STEP);
         if(isStop) {
             timer.start();
             button.setText(R.string.stop_timer);
