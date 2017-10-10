@@ -9,35 +9,30 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity{
 
-    CountDownTimer timer;
+    private static final int TIMER_DURATION = 3000;
+    private static final int TIMER_STEP = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        timer = new CountDownTimer(3000, 1000){
+        CountDownTimer timer = new CountDownTimer(TIMER_DURATION, TIMER_STEP) {
             @Override
-            public void onTick(long l) {}
-            public  void onFinish(){
+            public void onTick(long l) {
+            }
+
+            public void onFinish() {
                 createGame();
             }
         }.start();
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        timer = new CountDownTimer(3000, 1000){
-            @Override
-            public void onTick(long l) {}
-            public  void onFinish(){
-                createGame();
-            }
-        }.start();
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
-
-
 
     public void createGame() {
         Intent intent = new Intent(this, GameActivity.class);

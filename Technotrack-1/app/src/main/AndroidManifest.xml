@@ -18,7 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActivity" android:label="Игра"></activity>
+        <activity
+            android:name=".GameActivity"
+            android:label="Игра"
+            android:configChanges="orientation|keyboardHidden">
+
+        </activity>
     </application>
 
 </manifest>
